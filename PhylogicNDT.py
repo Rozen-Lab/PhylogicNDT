@@ -14,7 +14,8 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/")
 # Remove all handlers associated with the root logger object.
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
-filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'phylogicndt.log')
+#filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'phylogicndt.log')
+filename = os.path.join(os.getcwd(), 'phylogicndt.log')
 print(filename)
 logging.basicConfig(filename=filename,
                     filemode='w',
