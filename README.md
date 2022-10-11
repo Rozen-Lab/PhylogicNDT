@@ -1,8 +1,20 @@
 # PhylogicNDT
+This repository is forked from https://github.com/broadinstitute/PhylogicNDT. There is only one line of code change.
+
+In file PhylogicNDT.py,
+
+on line 17, `filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'phylogicndt.log')`
+
+is changed to `filename = os.path.join(os.getcwd(), 'phylogicndt.log')`
+
+Instead of writting the logging file inside the package folder, now it will be saved in the user's current working directory.
+
+This is to facilitate running PhylogicNDT inside a singularity container, as the singularity image file (.sif) is immutable.
+
 ## Installation 
 First:  Clone this repository
 
-    git clone https://github.com/broadinstitute/PhylogicNDT.git
+    git clone https://github.com/Rozen-Lab/PhylogicNDT.git
     cd PhylogicNDT
 
 Then either :
